@@ -105,16 +105,16 @@ document.querySelectorAll('.today-card, .rule-item').forEach(card => {
     });
 });
 
-// Navbar background on scroll
-window.addEventListener('scroll', () => {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(28, 37, 65, 0.98)';
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.background = 'rgba(28, 37, 65, 0.95)';
-        navbar.style.boxShadow = 'none';
-    }
-});
+// Navbar background on scroll - DISABLED to keep transparent
+// window.addEventListener('scroll', () => {
+//     const navbar = document.getElementById('navbar');
+//     if (window.scrollY > 50) {
+//         navbar.style.background = 'rgba(28, 37, 65, 0.98)';
+//         navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+//     } else {
+//         navbar.style.background = 'rgba(28, 37, 65, 0.95)';
+//         navbar.style.boxShadow = 'none';
+//     }
+// });
 
 console.log('A1 Investment Company - Website Loaded Successfully');
