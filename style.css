@@ -71,7 +71,24 @@ ul {
   background: transparent;
   backdrop-filter: none;
   border-bottom: none;
+  transition: all 0.3s ease;
   animation: slideDown 0.6s ease-out;
+}
+
+.navbar.navbar-scrolled {
+  background: rgba(28, 37, 65, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.navbar.navbar-scrolled .nav-btn {
+  padding: 15px 25px;
+}
+
+.navbar.navbar-scrolled .logo-circle {
+  margin: 5px 0;
+  transform: scale(0.9);
 }
 
 @keyframes slideDown {
@@ -172,9 +189,13 @@ ul {
 .burger div {
   width: 25px;
   height: 2px;
-  background-color: var(--white);
+  background-color: #ffffff;
   margin: 5px;
   transition: all 0.3s ease;
+}
+
+.navbar-scrolled .burger div {
+  background-color: var(--accent-blue);
 }
 
 .burger.active .line1 {
@@ -779,6 +800,18 @@ ul {
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    background: rgba(28, 37, 65, 0.8) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+
+  .navbar-scrolled {
+    background: rgba(28, 37, 65, 0.8) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+
   .nav-links {
     position: fixed;
     right: -100%;
@@ -813,6 +846,8 @@ ul {
   .burger {
     display: block;
     z-index: 1100;
+    padding: 15px;
+    margin-right: -10px;
   }
 
   .hero-title {
@@ -875,6 +910,12 @@ ul {
 
   .container {
     padding: 0 15px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .nav-container {
+    padding: 0 10px;
   }
 
   .section-title {
