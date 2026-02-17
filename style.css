@@ -251,7 +251,7 @@ ul {
 .title-line {
   display: block;
   margin-bottom: 5px;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .btn {
@@ -746,6 +746,10 @@ ul {
     font-size: 2.5rem;
   }
 
+  .title-line {
+    white-space: normal;
+  }
+
   .legend-header {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -780,20 +784,63 @@ ul {
     right: -100%;
     top: 0;
     height: 100vh;
-    width: 70%;
-    background: var(--primary-dark);
+    width: 80%;
+    max-width: 400px;
+    background: rgba(28, 37, 65, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     flex-direction: column;
     justify-content: center;
-    transition: right 0.5s ease;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
     padding: 20px;
+    z-index: 1000;
   }
 
   .nav-links.active {
     right: 0;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-btn {
+    font-size: 1.2rem;
+    padding: 15px 20px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+    text-align: center;
   }
 
   .burger {
     display: block;
+    z-index: 1100;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    line-height: 1.2;
+  }
+
+  .hero-content {
+    padding-top: 80px;
+  }
+
+  .today-section,
+  .footer {
+    background-attachment: scroll;
+  }
+
+  .today-card {
+    padding: 40px 30px;
+    min-height: auto;
+  }
+
+  .card-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .stat-number {
+    font-size: 4rem;
   }
 
   .rule-item {
@@ -802,6 +849,7 @@ ul {
       "num title"
       "empty desc";
     gap: 10px 15px;
+    padding: 25px 15px;
   }
 
   .rule-number {
@@ -811,20 +859,45 @@ ul {
   .rule-title {
     grid-area: title;
     padding-right: 0;
+    font-size: 1.05rem;
   }
 
   .rule-desc {
     grid-area: desc;
-    font-size: 0.95rem;
-  }
-
-  .hero-title {
-    font-size: 2rem;
+    font-size: 0.9rem;
   }
 
   .code-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 15px 25px;
+  }
+
+  .rule-item {
+    grid-template-columns: 40px 1fr;
+  }
+
+  .footer-cta {
+    font-size: 1.8rem;
   }
 }
